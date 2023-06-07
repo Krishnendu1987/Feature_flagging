@@ -1,5 +1,8 @@
 name: Evaluate LaunchDarkly flags
-on: push
+on:
+  push:
+    branches:
+      - main
 jobs:
   eval-flags:
     runs-on: ubuntu-latest
@@ -10,9 +13,9 @@ jobs:
         with:
           sdk-key: ${{ secrets.ACCESS_TOKEN }}
           flags: test-boolean-flag,false
-          - name: If true
-            if: fromJSON(steps.ld.outputs.test-boolean-flag) == true
-            run: echo "It's true"
-          - name: If false
-            if: fromJSON(steps.ld.outputs.test-boolean-flag) == false
-            run: echo "It's false"
+            - name:If true
+              if:fromJSON(steps.ld.outputs.test-boolean-flag) == true
+              run:echo "It's true"
+            - name:If false
+              if:fromJSON(steps.ld.outputs.test-boolean-flag) == false
+              run:echo "It's false"
