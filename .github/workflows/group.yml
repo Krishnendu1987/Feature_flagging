@@ -6,5 +6,7 @@ jobs:
     env:
       MY_NAME: "Mona The Octocat"
     steps:
-      - name: bash-version
-        run: echo "::add-mask::$MY_NAME"
+      - name: Delete all summary content
+      - run: |
+            echo "Adding Markdown content that we want to remove before the step ends" >> $GITHUB_STEP_SUMMARY
+            rm $GITHUB_STEP_SUMMARY
