@@ -3,9 +3,8 @@ on: push
 jobs:
   bash-example:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
     steps:
-      - name: Group of log lines
-        run: |
-            echo "::group::My title"
-            echo "Inside group"
-            echo "::endgroup::"
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
