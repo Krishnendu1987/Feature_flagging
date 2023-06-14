@@ -1,9 +1,6 @@
 name: Push to Main with Flag
 
-on:
- push:
-   branches:
-     - main
+on: push
 
 jobs:
  build:
