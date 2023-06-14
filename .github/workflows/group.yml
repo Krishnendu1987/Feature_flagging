@@ -12,7 +12,7 @@ jobs:
    steps:
      - name: Check Flag
        run: |
-         if [[ "$GITHUB_REF" == "refs/heads/master" && "$FLAG" == "true" ]]; then
+         if [[ "$GITHUB_REF" == "refs/heads/main" && "$FLAG" == "true" ]]; then
            echo "Flag is set. Proceeding with the workflow."
          else
            echo "Flag is not set. Skipping the workflow."
