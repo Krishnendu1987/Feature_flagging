@@ -1,9 +1,10 @@
-name: Push to Main with Flag
-
+name: hello-world
 on: push
-
 jobs:
- build:
-   runs-on: ubuntu-latest
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "Hello World!"
 
    
