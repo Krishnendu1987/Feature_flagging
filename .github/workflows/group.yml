@@ -1,4 +1,4 @@
-name: Push to Master with Flag
+name: Push to Main with Flag
 
 on:
  push:
