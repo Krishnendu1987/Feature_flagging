@@ -3,14 +3,12 @@ on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
-     steps:
-    - name: Check Flag
-       run: |
-         if [[ "$GITHUB_REF" == "refs/heads/main" && "$FLAG" == "true" ]]; then
+  steps:
+  - name: Check Flag
+    run: |
+     if [[ "$GITHUB_REF" == "refs/heads/main" && "$FLAG" == "true" ]]; then
            echo "Flag is set. Proceeding with the workflow."
          else
            echo "Flag is not set. Skipping the workflow."
            exit 78
          fi
-
-   
