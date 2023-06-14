@@ -1,10 +1,16 @@
-name: hello-world
+name: push_code
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
-    steps:
-      - name: my-step
-        run: echo "Hello World!"
+     steps:
+    - name: Check Flag
+       run: |
+         if [[ "$GITHUB_REF" == "refs/heads/master" && "$FLAG" == "true" ]]; then
+           echo "Flag is set. Proceeding with the workflow."
+         else
+           echo "Flag is not set. Skipping the workflow."
+           exit 78
+         fi
 
    
